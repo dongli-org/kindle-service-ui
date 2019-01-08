@@ -13,12 +13,22 @@ module.exports = {
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
     'plugin:vue/essential', 
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
+    'standard',
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
+    'import'
   ],
+  settings: {
+    "import/resolver": {
+        "webpack": {
+            "config": "./build/webpack.base.conf.js"
+        }
+    }
+  },  
   // add your custom rules here
   rules: {
     // allow async-await
